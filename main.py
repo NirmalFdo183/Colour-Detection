@@ -4,5 +4,7 @@ cap = cv2.VideoCapture(2)
 
 while True:
     ret, frame = cap.read()
-    hire
     
+    cv2.imshow('Webcam Feed', frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break

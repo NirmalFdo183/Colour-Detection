@@ -15,6 +15,8 @@ while True:
 
     mask = cv2.inRange(hsvImage, lowerLimit, upperLimit)
 
+    mask_ = Image.fromarray(mask)
+
     cv2.imshow('Webcam Feed', mask)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

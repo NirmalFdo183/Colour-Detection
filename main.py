@@ -2,7 +2,7 @@ import cv2
 from PIL import Image
 from util import get_limits
 
-yellow = [255,255,0]
+yellow = [0,255,255]
 
 cap = cv2.VideoCapture(0)
 

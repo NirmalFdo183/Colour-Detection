@@ -19,6 +19,13 @@ while True:
 
     bbox = mask_.getbbox()
 
+    print(bbox)
+
+    if bbox is not None:
+        x1, y1, x2, y2 = bbox
+
+        frame = cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 5)
+
     cv2.imshow('Webcam Feed', mask)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break

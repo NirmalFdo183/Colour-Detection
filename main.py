@@ -10,9 +10,11 @@ while True:
     
     hsvImage = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
+    mask = cv2.inRange(hsvImage, lowerLimit, upperLimit)
+
     lowerLimit, upperLimit = get_limits(color=red)
 
-    cv2.imshow('Webcam Feed', frame)
+    cv2.imshow('Webcam Feed', mask)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 

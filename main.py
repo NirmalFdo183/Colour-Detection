@@ -2,7 +2,7 @@ import cv2
 from PIL import Image
 from util import get_limits
 
-yellow = [0,255,255]
+green = [0,255,0]
 
 cap = cv2.VideoCapture(0)
 
@@ -11,7 +11,7 @@ while True:
     
     hsvImage = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    lowerLimit, upperLimit = get_limits(color=yellow)
+    lowerLimit, upperLimit = get_limits(color=green)
 
     mask = cv2.inRange(hsvImage, lowerLimit, upperLimit)
 

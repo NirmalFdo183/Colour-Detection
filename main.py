@@ -17,6 +17,8 @@ while True:
 
     mask_ = Image.fromarray(mask)
 
+    bbox = mask_.getbbox()
+
     cv2.imshow('Webcam Feed', mask)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
